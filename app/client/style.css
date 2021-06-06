@@ -1,0 +1,6 @@
+.landing-background {
+  background: url('images/cynopsis.png') no-repeat center fixed;
+  background-size: cover;
+  height: 925px;
+  border: none;
+}
