@@ -18,7 +18,7 @@ class MovieReview extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
-    const filter = this.props.reviews.filter(review => review.contactId === this.props.movie._id);
+    const filter = this.props.reviews.filter(review => review.movieId === this.props.movie._id);
     return (
       <Grid container columns={2}>
         <Grid.Column width={4}>
@@ -33,14 +33,14 @@ class MovieReview extends React.Component {
                 <br/>
               </Card.Content>
               <Card.Content extra>
-                <Rating disabled icon='star' maxRating={5} defaultRating={3}/>
+                <Rating disabled icon='heart' maxRating={5} defaultRating={3}/>
               </Card.Content>
             </Card>
           </Grid.Column>
         </Grid.Column>
 
         <Grid.Column width={10}>
-          <AddReview contactId={this.props.movie._id}/>
+          <AddReview movieId={this.props.movie._id}/>
           <Card fluid>
             <Card.Content>
               <Card.Header>Reviews for {this.props.movie.title}</Card.Header>
