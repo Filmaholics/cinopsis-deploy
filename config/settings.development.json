@@ -49,5 +49,13 @@
     { "name": "Mystery" },
     { "name": "Fantasy" },
     { "name": "Historical" }
+  ],
+
+  "defaultProfile" : [{
+    "profilename": "Movie Lover",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTE2ODU4NDEtNmRjNS00OTk1LTg4NmMtNTAzYzVlNzJmYjgzXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg",
+    "bio": "Hi, I love watching movies!",
+    "owner": "john@foo.com"
+    }
   ]
 }
