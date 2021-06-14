@@ -14,9 +14,9 @@ class AddReview extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { review, rating, contactId, createdAt, professorName } = data;
+    const { review, rating, movieId, createdAt, title } = data;
     const owner = Meteor.user().username;
-    Reviews.collection.insert({ review, rating, contactId, createdAt, professorName, owner },
+    Reviews.collection.insert({ review, rating, movieId, createdAt, title, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -37,7 +37,7 @@ class AddReview extends React.Component {
           <LongTextField label="Review" name='review'/>
           <SubmitField centered value='Submit'/>
           <ErrorsField/>
-          <HiddenField name='contactId' value={this.props.contactId}/>
+          <HiddenField name='movieId' value={this.props.movieId}/>
           <HiddenField name='createdAt' value={new Date()}/>
         </Segment>
       </AutoForm>
@@ -46,7 +46,7 @@ class AddReview extends React.Component {
 }
 
 AddReview.propTypes = {
-  contactId: PropTypes.string.isRequired,
+  movieId: PropTypes.string.isRequired,
 };
 
 export default AddReview;

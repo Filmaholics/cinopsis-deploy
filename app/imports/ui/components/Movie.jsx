@@ -27,7 +27,7 @@ class Movie extends React.Component {
         <br/>
         <Card.Header>
           <Header textAlign='center'>
-            <Button size='tiny' color='black' as={NavLink} exact to={`/course/${this.props.movie._id}`}>Review</Button>
+            <Button size='tiny' color='black' as={NavLink} exact to={`/movie/${this.props.movie._id}`}>Review</Button>
           </Header>
         </Card.Header>
       </Card>

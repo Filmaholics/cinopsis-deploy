@@ -4,6 +4,7 @@ import { Stuffs } from '../../api/stuff/Stuff';
 import { Movies } from '../../api/movie/Movies';
 import { MovieGenres } from '../../api/movie/MovieGenres';
 import { AllGenres } from '../../api/genre/AllGenres';
+import { Reviews } from '../../api/review/Reviews';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -32,6 +33,13 @@ Meteor.publish(MovieGenres.userPublicationName, function () {
 Meteor.publish(AllGenres.userPublicationName, function () {
   if (this.userId) {
     return AllGenres.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Reviews.userPublicationName, function () {
+  if (this.userId) {
+    return Reviews.collection.find();
   }
   return this.ready();
 });

@@ -14,7 +14,7 @@ class ReviewsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       review: String,
-      contactId: String,
+      movieId: String,
       rating: String,
       createdAt: Date,
     }, { tracker: Tracker });
