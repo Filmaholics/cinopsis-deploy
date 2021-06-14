@@ -41,11 +41,13 @@ Meteor.publish(AllGenres.userPublicationName, function () {
 Meteor.publish(Reviews.userPublicationName, function () {
   if (this.userId) {
     return Reviews.collection.find();
+  }
+  return this.ready();
+});
 
 Meteor.publish(Profile.userPublicationName, function () {
   if (this.userId) {
     return Profile.collection.find();
-
   }
   return this.ready();
 });
