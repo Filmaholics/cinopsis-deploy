@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class GenreLabel extends React.Component {
   render() {
     return (
-      <Label color='orange'>
+      <Label color='blue'>
         {this.props.movie_genre.type}
       </Label>
     );

@@ -63,8 +63,9 @@ export default withTracker(() => {
   const subscription2 = Meteor.subscribe(MovieGenres.userPublicationName);
   const ready = subscription.ready() && subscription2.ready();
   const movie_genres = MovieGenres.collection.find({}).fetch();
+  const movies = Movies.collection.find({}).fetch();
   return {
-    movies: Movies.collection.find({}).fetch(),
+    movies,
     movie_genres,
     ready,
   };
