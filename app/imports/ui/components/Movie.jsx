@@ -15,11 +15,10 @@ class Movie extends React.Component {
       <Card>
         <Card.Content>
           <Image
-            floated='right'
-            size='mini'
-            src={this.props.movie.image}
+            src={this.props.movie.image} fluid
           />
-          <Card.Header>{this.props.movie.title}</Card.Header>
+          <Card.Header>
+            <h2 className="ui center aligned header">{this.props.movie.title}</h2></Card.Header>
           <Card.Description>Synopsis: {this.props.movie.synopsis}</Card.Description>
           <Header as='h4'>Genres:</Header>
           {alphaSort(this.props.movie_genres).map((movie_genre, index) => <GenreLabel key={index} movie_genre={movie_genre}/>)}
@@ -27,7 +26,7 @@ class Movie extends React.Component {
         <br/>
         <Card.Header>
           <Header textAlign='center'>
-            <Button size='tiny' color='black' as={NavLink} exact to={`/course/${this.props.movie._id}`}>Review</Button>
+            <Button fluid size='tiny' color='black' as={NavLink} exact to={`/course/${this.props.movie._id}`}>Review</Button>
           </Header>
         </Card.Header>
       </Card>
