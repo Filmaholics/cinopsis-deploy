@@ -19,7 +19,7 @@ class Movie extends React.Component {
             size='mini'
             src={this.props.movie.image}
           />
-          <Card.Header>{this.props.movie.name}</Card.Header>
+          <Card.Header>{this.props.movie.title}</Card.Header>
           <Card.Description>Synopsis: {this.props.movie.synopsis}</Card.Description>
           <Header as='h4'>Genres:</Header>
           {alphaSort(this.props.movie_genres).map((movie_genre, index) => <GenreLabel key={index} movie_genre={movie_genre}/>)}

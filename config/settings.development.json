@@ -25,6 +25,7 @@
   "defaultMovieGenres" : [
     { "genre" : "Action", "title": "In the Heights" },
     { "genre" : "Horror", "title": "In the Heights" },
+    { "genre" : "Romance", "title": "In the Heights" },
     { "genre" : "Thriller", "title": "Peter Rabbit 2" },
     { "genre" : "Comedy", "title": "Peter Rabbit 2" },
     { "genre" : "Romance", "title": "A Quiet Place Part II" },

@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import { Movies } from '../../api/movie/Movies';
 import Movie from '../components/Movie';
 import { MovieGenres } from '../../api/movie/MovieGenres';
-import GenreLabel from '../components/GenreLabel';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class BrowseMovies extends React.Component {
@@ -39,7 +38,10 @@ class BrowseMovies extends React.Component {
           onChange={this.handleChange}/>
         <br/><br/><br/><br/>
         <Card.Group>
-          {this.props.movies.map((movie, index) => <Movie key={index} movie={movie} />)}
+          {this.props.movies.map((movie, index) => <Movie
+            key={index}
+            movie={movie}
+            movie_genres={this.props.movie_genres.filter(movie_genres => (movie_genres.title === movie.title))}/>)}
         </Card.Group>
       </Container>
     );
@@ -50,6 +52,7 @@ class BrowseMovies extends React.Component {
 BrowseMovies.propTypes = {
   movies: PropTypes.array.isRequired,
   movie_genres: PropTypes.array.isRequired,
+  myGenres: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
 
