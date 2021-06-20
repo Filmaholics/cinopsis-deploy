@@ -1,24 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { Feed, Rating } from 'semantic-ui-react';
+import { Feed, Rating, Card } from 'semantic-ui-react';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Review extends React.Component {
   render() {
     return (
-      <Feed.Event>
-        <Feed.Content>
-          <Feed.Summary>
-            <Rating icon='heart' maxRating={5} defaultRating={this.props.review.rating}/>
-            <Feed.Date content={this.props.review.createdAt.toLocaleDateString('en-US')} />
-          </Feed.Summary>
-          <Feed.Summary>
-            {this.props.review.review}
-          </Feed.Summary>
-          <br/><br/>
-        </Feed.Content>
-      </Feed.Event>
+      <Card>
+        <Feed.Event>
+          <Feed.Content>
+            <Feed.Summary>
+              <br/>
+              <Rating icon='heart' maxRating={5} defaultRating={this.props.review.rating}/>
+            </Feed.Summary>
+            <br/>
+            <Feed.Summary>
+              <Feed.Date content={this.props.review.createdAt.toLocaleDateString('en-US')} />
+            </Feed.Summary>
+            <Feed.Summary>
+              <br/> {this.props.review.review}
+            </Feed.Summary>
+            <br/><br/>
+          </Feed.Content>
+        </Feed.Event>
+      </Card>
     );
   }
 }
