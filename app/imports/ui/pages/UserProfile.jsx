@@ -18,7 +18,7 @@ class UserProfile extends React.Component {
     return (
       <Container id='userprofile-page'>
         <Header as="h2" textAlign="center">Your Reviews</Header>
-        <Card.Group>
+        <Card.Group centered>
           {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
         </Card.Group>
       </Container>
