@@ -1,26 +1,37 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
-import { Container, Loader, Card, Input, Header } from 'semantic-ui-react';
+import { Container, Loader, Card, Input, Header, Button } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import { Roles } from 'meteor/alanning:roles';
 import { Movies } from '../../api/movie/Movies';
 import Movie from '../components/Movie';
 import { MovieGenres } from '../../api/movie/MovieGenres';
 
+function alphabet(movies) {
+  return _.sortBy(movies, function (movie) { return movie.title.toLowerCase(); });
+}
+
+function searchMovies(movies, search) {
+  if (search === '') {
+    return movies;
+  }
+  const filteredMovies = _.pluck('title');
+  return _.filter(movies, function (movie) {
+    return _.contains(filteredMovies, movie.title);
+  });
+}
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class BrowseMovies extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { search: '' };
   }
 
-  handleChange = (e, { value }) => this.setState({ search: value });
-
-  MovieSearch = (movie) => {
-    const { search } = this.state;
-    const lowerCase = search.toLowerCase();
-    return movie.title.toLowerCase().startsWith(lowerCase);
+  handleMessage(e) {
+    this.setState({ search: e.target.value });
   }
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -30,18 +41,24 @@ class BrowseMovies extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
+    const { search } = this.state;
     return (
       <Container>
+        {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+          <Button as={NavLink} activeClassName="active" exact to="/AddMovie" size='medium'>Add a Movie</Button>
+        ) : ''}
         <Header as="h2" textAlign="center">Movies</Header>
         <br/><br/>
         <Input inverted type='text' size='large' placeholder='Search here...' icon='search' fluid
           onChange={this.handleChange}/>
         <br/><br/><br/><br/>
         <Card.Group>
-          {this.props.movies.map((movie, index) => <Movie
-            key={index}
-            movie={movie}
-            movie_genres={this.props.movie_genres.filter(movie_genres => (movie_genres.title === movie.title))}/>)}
+          {(_.size(searchMovies(this.props.movies, search.toLowerCase())) > 0) ?
+            (alphabet(searchMovies(this.props.movies, search.toLowerCase())).map((movie, index) => <Movie
+              key={index}
+              movie={movie}
+              movie_genres={this.props.movie_genres.filter(movie_genres => (movie_genres.title === movie.title))}/>)) : this.displayNoUsers()
+          }
         </Card.Group>
       </Container>
     );
@@ -52,7 +69,6 @@ class BrowseMovies extends React.Component {
 BrowseMovies.propTypes = {
   movies: PropTypes.array.isRequired,
   movie_genres: PropTypes.array.isRequired,
-  myGenres: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { _ } from 'meteor/underscore';
-import { Card, Image, Header, Button, Rating, Feed, CardContent } from 'semantic-ui-react';
+import { Card, Image, Header, Button, Feed } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { NavLink, withRouter } from 'react-router-dom';
 import GenreLabel from './GenreLabel';
@@ -27,12 +27,6 @@ class Movie extends React.Component {
         <br/>
         <Card.Content extra>
           <Feed.Event>
-            <Feed.Content>
-              <Feed.Summary>
-                <div style={{ paddingLeft: '75px' }}>
-                  <Rating fluid icon='heart' maxRating={5} defaultRating={this.props.movie.rating}/></div>
-              </Feed.Summary>
-            </Feed.Content>
           </Feed.Event>
         </Card.Content>
         <Card.Header>

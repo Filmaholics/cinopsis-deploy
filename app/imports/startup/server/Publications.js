@@ -2,10 +2,10 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Movies } from '../../api/movie/Movies';
-import { MovieGenres } from '../../api/movie/MovieGenres';
 import { AllGenres } from '../../api/genre/AllGenres';
 import { Reviews } from '../../api/review/Reviews';
 import { Profile } from '../../api/profile/Profile';
+import { MovieGenres } from '../../api/movie/MovieGenres';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
