@@ -8,7 +8,6 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import UserPage from '../pages/UserPage';
-import EditStuff from '../pages/EditStuff';
 import UserProfile from '../pages/UserProfile';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
