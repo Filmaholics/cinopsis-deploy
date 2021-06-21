@@ -2,9 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
-/**
- * The StuffsCollection. It encapsulates state and variable values for stuff.
- */
+/* The StuffsCollection. It encapsulates state and variable values for stuff. */
 class MovieGenresCollection {
   constructor() {
     // The name of this collection.
@@ -14,19 +12,21 @@ class MovieGenresCollection {
 
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      genre: String,
+      genre: {
+        type: String,
+        allowedValues: ['Action', 'Horror', 'Romance', 'Drama', 'Comedy', 'Science fiction', 'Thriller', 'Musical', 'Documentary', 'Western', 'Crime', 'Mystery', 'Fantasy', 'Historical'],
+      },
       title: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
     this.userPublicationName = `${this.name}.publication.user`;
-    // this.adminPublicationName = `${this.name}.publication.admin`;
+    // this.adminPublicationName = ${this.name}.publication.admin;
   }
 }
 
-/**
- * The singleton instance of the StuffsCollection.
- * @type {StuffsCollection}
- */
+/* The singleton instance of the StuffsCollection.
+* @type {StuffsCollection}
+*/
 export const MovieGenres = new MovieGenresCollection();
