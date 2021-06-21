@@ -33,7 +33,7 @@ class AddMovie extends React.Component {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'New Cat Added', 'success');
+          swal('Success', 'New Movie Added', 'success');
           formRef.reset();
         }
       });
@@ -47,7 +47,7 @@ class AddMovie extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center" inverted>New Cat</Header>
+          <Header as="h2" textAlign="center" inverted>New Movie</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
             <Segment>
               <TextField name='title'/>
