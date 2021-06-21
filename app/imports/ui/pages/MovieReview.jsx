@@ -32,7 +32,7 @@ class MovieReview extends React.Component {
                 </Card.Description>
                 <br/>
               </Card.Content>
-              </Card>
+            </Card>
           </Grid.Column>
         </Grid.Column>
 

@@ -2,7 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Movies } from '../../api/movie/Movies.js';
 import { MovieGenres } from '../../api/movie/MovieGenres.js';
-import { AllGenres } from '../../api/genre/AllGenres';
 import { Profile } from '../../api/profile/Profile';
 
 /* eslint-disable no-console */
@@ -20,10 +19,6 @@ function addMovie(data) {
 
 function addGenres(data) {
   MovieGenres.collection.insert(data);
-}
-
-function addPossibleGenre(data) {
-  AllGenres.collection.insert(data);
 }
 
 function addProfile(data) {
@@ -49,13 +44,6 @@ if (MovieGenres.collection.find().count() === 0) {
   if (Meteor.settings.defaultMovieGenres) {
     console.log('Creating default data.');
     Meteor.settings.defaultMovieGenres.map(data => addGenres(data));
-  }
-}
-
-if (AllGenres.collection.find().count() === 0) {
-  if (Meteor.settings.allGenres) {
-    console.log('Creating list of possible genres.');
-    Meteor.settings.allGenres.map(data => addPossibleGenre(data));
   }
 }
 

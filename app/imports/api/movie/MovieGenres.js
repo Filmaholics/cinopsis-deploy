@@ -12,7 +12,10 @@ class MovieGenresCollection {
 
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      genre: String,
+      genre: {
+        type: String,
+        allowedValues: ['Action', 'Horror', 'Romance', 'Drama', 'Comedy', 'Science fiction', 'Thriller', 'Musical', 'Documentary', 'Western', 'Crime', 'Mystery', 'Fantasy', 'Historical'],
+      },
       title: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

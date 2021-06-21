@@ -9,7 +9,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { _ } from 'meteor/underscore';
 import PropTypes from 'prop-types';
 import { Movies } from '../../api/movie/Movies.js';
-import { AllGenres } from '../../api/genre/AllGenres';
+import { MovieGenres } from '../../api/movie/MovieGenres';
 import MultiSelectField from '../components/MultiSelectField';
 
 // Create a schema to specify the structure of the data to appear in the form.
@@ -41,7 +41,7 @@ class AddMovie extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   render() {
-    const allGenres = _.pluck(AllGenres.collection.find().fetch(), 'genre');
+    const allGenres = _.pluck(MovieGenres.collection.find().fetch(), 'genre');
     const newSchema = formSchema(allGenres);
     const bridge = new SimpleSchema2Bridge(newSchema);
     return (
@@ -71,7 +71,7 @@ AddMovie.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Ensure that minimongo is populated with all collections prior to running render().
-  const sub = Meteor.subscribe(AllGenres.userPublicationName);
+  const sub = Meteor.subscribe(MovieGenres.userPublicationName);
   return {
     ready: sub.ready(),
   };

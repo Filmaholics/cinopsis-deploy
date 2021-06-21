@@ -2,7 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Movies } from '../../api/movie/Movies';
-import { AllGenres } from '../../api/genre/AllGenres';
 import { Reviews } from '../../api/review/Reviews';
 import { Profile } from '../../api/profile/Profile';
 import { MovieGenres } from '../../api/movie/MovieGenres';
@@ -27,13 +26,6 @@ Meteor.publish(Movies.userPublicationName, function () {
 Meteor.publish(MovieGenres.userPublicationName, function () {
   if (this.userId) {
     return MovieGenres.collection.find();
-  }
-  return this.ready();
-});
-
-Meteor.publish(AllGenres.userPublicationName, function () {
-  if (this.userId) {
-    return AllGenres.collection.find();
   }
   return this.ready();
 });
