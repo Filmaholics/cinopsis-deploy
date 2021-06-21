@@ -1,6 +1,6 @@
 import React from 'react';
 import { _ } from 'meteor/underscore';
-import { Card, Image, Header, Button, Rating, Feed, CardContent } from 'semantic-ui-react';
+import { Card, Image, Header, Button, Rating, Feed } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { NavLink, withRouter } from 'react-router-dom';
 import GenreLabel from './GenreLabel';
