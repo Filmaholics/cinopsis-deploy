@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
-import { withTracker } from 'meteor/react-meteor-data';
-import { Meteor } from 'meteor/meteor';
 import { Users } from '../../api/user/User';
 
 /**
@@ -29,13 +27,8 @@ class Signup extends React.Component {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        Users.collection.insert({ firstName: firstname, lastName: lastname, image: profilepic, email, bio }, (err2) => {
-          if (err2) {
-            this.setState({ error: err2.reason });
-          } else {
-            this.setState({ error: '', redirectToReferer: true });
-          }
-        });
+        Users.collection.insert({ firstName: firstname, lastName: lastname, image: profilepic, email, bio });
+        this.setState({ error: '', redirectToReferer: true });
       }
     });
   }
@@ -43,18 +36,17 @@ class Signup extends React.Component {
   /* Display the signup form. Redirect to add page after successful registration and login. */
   render() {
     // styles
-    const headerStyle = { color: '#3E546A' };
-    const contPad = { paddingTop: '25px', paddingBottom: '100px' };
-    const { from } = this.props.location.state || { from: { pathname: '/add' } };
+    const padding = { paddingTop: '25px', paddingBottom: '100px' };
+    const { from } = this.props.location.state || { from: { pathname: '/' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
     }
     return (
-      <Container id="signup-page" style={contPad}>
+      <Container id="signup-page" style={padding}>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
-            <Header as="h2" textAlign="center" style={headerStyle}>
+            <Header as="h2" textAlign="center">
                 Register your account
             </Header>
             <Form onSubmit={this.submit}>
@@ -146,13 +138,4 @@ Signup.propTypes = {
   location: PropTypes.object,
 };
 
-export default withTracker(() => {
-  // Get access to Recipes documents.
-  const subscription = Meteor.subscribe(Users.adminPublicationName);
-  // Determine if the subscription is ready
-  const ready = subscription.ready();
-  // Get the Stuff documents
-  return {
-    ready,
-  };
-})(Signup);
+export default Signup;
