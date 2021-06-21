@@ -6,6 +6,7 @@ import { MovieGenres } from '../../api/movie/MovieGenres';
 import { AllGenres } from '../../api/genre/AllGenres';
 import { Reviews } from '../../api/review/Reviews';
 import { Profile } from '../../api/profile/Profile';
+import { Users } from '../../api/user/User';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -64,6 +65,21 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
 Meteor.publish(Movies.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Movies.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Users.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Users.collection.find({ email: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Users.adminPublicationName, function () {
+  if (this.userId) {
+    return Users.collection.find();
   }
   return this.ready();
 });
