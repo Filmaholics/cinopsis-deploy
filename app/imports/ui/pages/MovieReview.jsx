@@ -20,6 +20,7 @@ class MovieReview extends React.Component {
   renderPage() {
     const filter = this.props.reviews.filter(review => review.movieId === this.props.movie._id);
     return (
+      <div className='default-background'>
       <Grid container columns={2}>
         <Grid.Column width={4}>
           <Grid.Column>
@@ -53,6 +54,7 @@ class MovieReview extends React.Component {
           </Card>
         </Grid.Column>
       </Grid>
+      </div>
     );
   }
 }

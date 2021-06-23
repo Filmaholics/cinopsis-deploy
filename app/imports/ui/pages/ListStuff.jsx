@@ -17,6 +17,7 @@ class ListStuff extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
+      <div className='default-background'>
       <Container>
         <Header as="h2" textAlign="center">List Stuff</Header>
         <Table celled>
@@ -33,6 +34,7 @@ class ListStuff extends React.Component {
           </Table.Body>
         </Table>
       </Container>
+      </div>
     );
   }
 }

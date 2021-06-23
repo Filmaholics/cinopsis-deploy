@@ -17,6 +17,7 @@ class UserProfile extends React.Component {
   renderPage() {
 
     return (
+      <div className='default-background'>
       <Container id='userprofile-page'>
         <Header as="h2" textAlign="center">My Profile</Header>
         <Grid centered columns={3}>
@@ -53,6 +54,7 @@ class UserProfile extends React.Component {
           </Grid.Column>
         </Grid>
       </Container>
+      </div>
     );
   }
 }

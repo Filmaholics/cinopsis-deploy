@@ -15,6 +15,7 @@ class UserPage extends React.Component {
   renderPage() {
     const padding = { paddingTop: '25px', paddingBottom: '25px' };
     return (
+      <div className='default-background'>
       <Grid divided='vertically' relaxed container id="user-page" style={ padding }>
         <Grid.Row columns={2}>
           <Grid.Column width={6}>
@@ -30,6 +31,7 @@ class UserPage extends React.Component {
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      </div>
     );
   }
 }

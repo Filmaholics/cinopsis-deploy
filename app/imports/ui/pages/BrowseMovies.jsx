@@ -30,7 +30,9 @@ class BrowseMovies extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
+      <div className='default-background'>
       <Container>
+      
         <Header as="h2" textAlign="center">Movies</Header>
         <br/><br/>
         <Input inverted type='text' size='large' placeholder='Search here...' icon='search' fluid
@@ -43,6 +45,7 @@ class BrowseMovies extends React.Component {
             movie_genres={this.props.movie_genres.filter(movie_genres => (movie_genres.title === movie.title))}/>)}
         </Card.Group>
       </Container>
+      </div>
     );
   }
 }
