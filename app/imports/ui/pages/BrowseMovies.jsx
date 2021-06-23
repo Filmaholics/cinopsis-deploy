@@ -36,7 +36,7 @@ class BrowseMovies extends React.Component {
         <Input inverted type='text' size='large' placeholder='Search here...' icon='search' fluid
           onChange={this.handleChange}/>
         <br/><br/><br/><br/>
-        <Card.Group>
+        <Card.Group center>
           {this.props.movies.map((movie, index) => <Movie
             key={index}
             movie={movie}
