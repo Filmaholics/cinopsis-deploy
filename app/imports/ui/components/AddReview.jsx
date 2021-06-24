@@ -3,7 +3,6 @@ import { AutoForm, ErrorsField, SubmitField, HiddenField, NumField, LongTextFiel
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import PropTypes from 'prop-types';
-import { Meteor } from 'meteor/meteor';
 import { Header, Segment } from 'semantic-ui-react';
 import { Reviews } from '../../api/review/Reviews';
 
@@ -14,9 +13,8 @@ class AddReview extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { review, rating, movieId, createdAt, title } = data;
-    const owner = Meteor.user().username;
-    Reviews.collection.insert({ review, rating, movieId, createdAt, title, owner },
+    const { owner, review, rating, movieId, createdAt, title } = data;
+    Reviews.collection.insert({ owner, review, rating, movieId, createdAt, title },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');

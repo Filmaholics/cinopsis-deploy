@@ -4,3 +4,8 @@
   height: 925px;
   border: none;
 }
+
+.review-card{
+  margin-left: 10px;
+  font-weight: bolder;
+}
