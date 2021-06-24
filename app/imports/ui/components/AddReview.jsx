@@ -16,7 +16,7 @@ class AddReview extends React.Component {
   submit(data, formRef) {
     const { user, review, rating, movieId, createdAt, title } = data;
     const owner = Meteor.user().username;
-    Reviews.collection.insert({ user, review, rating, movieId, createdAt, title, owner },
+    Reviews.collection.insert({ owner, review, rating, movieId, createdAt, title },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -35,6 +35,7 @@ class AddReview extends React.Component {
           <Header>Write A Review</Header>
           <NumField decimal={false} max={5} min={1} label="Rating" name='rating' placeholder='From 1 to 5'/>
           <LongTextField label="Review" name='review'/>
+          <HiddenField name='owner' value = {Meteor.user().username} />
           <SubmitField centered value='Submit'/>
           <ErrorsField/>
           <HiddenField name='movieId' value={this.props.movieId}/>
@@ -47,6 +48,7 @@ class AddReview extends React.Component {
 
 AddReview.propTypes = {
   movieId: PropTypes.string.isRequired,
+  user: PropTypes.string.isRequired,
 };
 
 export default AddReview;

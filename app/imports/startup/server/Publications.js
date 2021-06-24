@@ -23,7 +23,8 @@ Meteor.publish(MovieGenres.userPublicationName, function () {
 
 Meteor.publish(Reviews.userPublicationName, function () {
   if (this.userId) {
-    return Reviews.collection.find();
+    const username = Meteor.users.findOne(this.userId).username;
+    return Reviews.collection.find({ owner: username });
   }
   return this.ready();
 });

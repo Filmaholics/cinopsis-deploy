@@ -15,6 +15,7 @@ import Signout from '../pages/Signout';
 import BrowseMovies from '../pages/BrowseMovies';
 import MovieReview from '../pages/MovieReview';
 import AddMovie from '../pages/AddMovie';
+import UserReview from '../pages/UserReview';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -30,6 +31,7 @@ class App extends React.Component {
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/user" component={UserPage}/>
             <ProtectedRoute path="/browse" component={BrowseMovies}/>
+            <ProtectedRoute path="/review" component={UserReview}/>
             <ProtectedRoute path="/movie/:_id" component={MovieReview}/>
             <AdminProtectedRoute path="/addmovie" component={AddMovie}/>
             <Route component={NotFound}/>
