@@ -29,7 +29,7 @@ class UserPage extends React.Component {
               <p>{this.props.user.bio}</p>
               <br/>
               <Card.Content extra>
-                <Link to={`/browse/${this.props.user._id}`}>Edit Your Profile</Link>
+                <Link to={`/editprofile/${this.props.user._id}`}>Edit Your Profile</Link>
               </Card.Content>
             </Container>
           </Grid.Column>

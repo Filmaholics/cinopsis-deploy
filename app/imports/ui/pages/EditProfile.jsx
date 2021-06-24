@@ -13,9 +13,9 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { User } from '../../api/user/User';
+import { Users } from '../../api/user/User';
 
-const bridge = new SimpleSchema2Bridge(User.schema);
+const bridge = new SimpleSchema2Bridge(Users.schema);
 
 /** Renders the Page for editing a single document. */
 class EditProfile extends React.Component {
@@ -23,7 +23,7 @@ class EditProfile extends React.Component {
   // On successful submit, insert the data.
   submit(data) {
     const { firstName, lastName, image, bio, _id } = data;
-    User.collection.update(_id, { $set: { firstName, lastName, image, bio } }, (error) => (error ?
+    Users.collection.update(_id, { $set: { firstName, lastName, image, bio } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -36,15 +36,15 @@ class EditProfile extends React.Component {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
     return (
-      <Grid container centered id="userEdit-Page">
+      <Grid container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Edit Profile</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
             <Segment>
-              <TextField id="edit-name" name='name'/>
-              <TextField id="edit-image"name='image'/>
-              <LongTextField id="edit-bio"name='bio'/>
-              <SubmitField id="edit-Submit"value='Submit'/>
+              <TextField name='name'/>
+              <TextField name='image'/>
+              <LongTextField name='bio'/>
+              <SubmitField value='Submit'/>
               <ErrorsField/>
               <HiddenField name='owner' />
             </Segment>
@@ -67,11 +67,11 @@ export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const documentId = match.params._id;
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(User.userPublicationName);
+  const subscription = Meteor.subscribe(Users.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the document
-  const doc = User.collection.findOne(documentId);
+  const doc = Users.collection.findOne(documentId);
   return {
     doc,
     ready,
