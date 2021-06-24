@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
-import { Container, Loader, Card, Input, Header, Button } from 'semantic-ui-react';
+import { Container, Loader, Card, Input, Header, Button, Menu } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
@@ -52,7 +52,7 @@ class BrowseMovies extends React.Component {
         <Input inverted type='text' size='large' placeholder='Search here...' icon='search' fluid
           onChange={this.handleChange}/>
         <br/><br/><br/><br/>
-        <Card.Group>
+        <Card.Group centered>
           {(_.size(searchMovies(this.props.movies, search.toLowerCase())) > 0) ?
             (alphabet(searchMovies(this.props.movies, search.toLowerCase())).map((movie, index) => <Movie
               key={index}
