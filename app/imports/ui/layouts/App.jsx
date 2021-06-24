@@ -8,7 +8,6 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import UserPage from '../pages/UserPage';
-import UserProfile from '../pages/UserProfile';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -30,7 +29,6 @@ class App extends React.Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/user" component={UserPage}/>
-            <ProtectedRoute path="/user" component={UserProfile}/>
             <ProtectedRoute path="/browse" component={BrowseMovies}/>
             <ProtectedRoute path="/movie/:_id" component={MovieReview}/>
             <AdminProtectedRoute path="/addmovie" component={AddMovie}/>

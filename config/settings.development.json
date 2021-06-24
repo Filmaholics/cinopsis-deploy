@@ -39,18 +39,8 @@
     { "genre" : "Historical" }
   ],
 
-  "defaultProfile" : [{
-    "profilename": "Movie Lover",
-    "image": "https://m.media-amazon.com/images/M/MV5BMTE2ODU4NDEtNmRjNS00OTk1LTg4NmMtNTAzYzVlNzJmYjgzXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg",
-    "bio": "Hi, I love watching movies!",
-    "email": "john@foo.com",
-    "owner": "john@foo.com"
-    }
-  ],
-
-  "defaultUserProfile": [
-    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "Admin", "email": "admin@foo.com",  "bio": "I love cooking!" },
-    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "John", "lastName": "Stamos", "email": "john@foo.com", "bio": "I love sharing recipes!" },
-    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "Mary", "lastName": "Smith", "email": "mary@foo.com", "bio": "I love eating delicious food!" }
+  "defaultProfile": [
+    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "Admin", "lastName": "Boss", "email": "admin@foo.com",  "bio": "I love movies!" },
+    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "Movie", "lastName": "Lover", "email": "john@foo.com",  "bio": "I love movies!" }
   ]
 }
