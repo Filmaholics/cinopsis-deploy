@@ -41,7 +41,8 @@ Meteor.publish(AllGenres.userPublicationName, function () {
 
 Meteor.publish(Reviews.userPublicationName, function () {
   if (this.userId) {
-    return Reviews.collection.find();
+    const owner = Meteor.users.findOne(this.userId).username;
+    return Reviews.collection.find({ owner: owner });
   }
   return this.ready();
 });
