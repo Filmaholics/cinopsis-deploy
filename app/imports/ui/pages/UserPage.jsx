@@ -1,8 +1,9 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Header, Loader, Grid, Image, Container, Card } from 'semantic-ui-react';
+import { Header, Loader, Grid, Image, Container, Card, Button } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import { Users } from '../../api/user/User';
 
 class UserPage extends React.Component {
@@ -25,7 +26,8 @@ class UserPage extends React.Component {
               <Header as='h2' >{this.props.user.firstName} {this.props.user.lastName}</Header>
               <Card.Meta>{this.props.user.email}</Card.Meta>
               <Header as='h3' >Bio</Header>
-              <p>{this.props.user.bio}</p>
+              <p>{this.props.user.bio}</p><br/><br/><br/><br/>
+              <Button as={NavLink} activeClassName="active" exact to="/browse" size='medium'>Edit</Button>
             </Container>
           </Grid.Column>
         </Grid.Row>
