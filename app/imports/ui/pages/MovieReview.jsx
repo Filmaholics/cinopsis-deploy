@@ -32,9 +32,6 @@ class MovieReview extends React.Component {
                 </Card.Description>
                 <br/>
               </Card.Content>
-              <Card.Content extra>
-                <Rating disabled icon='heart' maxRating={5} defaultRating={3}/>
-              </Card.Content>
             </Card>
           </Grid.Column>
         </Grid.Column>

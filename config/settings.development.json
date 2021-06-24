@@ -6,53 +6,37 @@
   "defaultMovies": [
     { "title": "In the Heights",
       "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/In_The_Heights_teaser_poster.jpg/220px-In_The_Heights_teaser_poster.jpg",
-      "synopsis": "A musical love triangle",
-      "rating": "3"
+      "synopsis": "A musical love triangle"
     },
     { "title": "Peter Rabbit 2",
       "image": "https://m.media-amazon.com/images/M/MV5BNTQwOThjZTEtNDNhZS00YmYzLWFkNWMtNWRjN2RmOWI5ZmU1XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg",
-      "synopsis": "A rabbit finds life outside of his garden isn't everything he thought it would be",
-      "rating": "3"
+      "synopsis": "A rabbit finds life outside of his garden isn't everything he thought it would be"
     },
     { "title": "A Quiet Place Part II",
       "image": "https://m.media-amazon.com/images/M/MV5BMTE2ODU4NDEtNmRjNS00OTk1LTg4NmMtNTAzYzVlNzJmYjgzXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg",
-      "synopsis": "Forced off their farm, the Abbott family tries to survive",
-      "rating": "3"
+      "synopsis": "Forced off their farm, the Abbott family tries to survive"
     },
     { "title": "Cruella",
       "image": "http://udreview.com/wp-content/uploads/2021/03/cruella_digital_teaser2_1-sht_v2_lg-2.jpg",
-      "synopsis": "Cruella's origin story",
-      "rating": "3"
+      "synopsis": "Cruella's origin story"
     }
   ],
 
   "defaultMovieGenres" : [
-    { "genre" : "Action", "title": "In the Heights" },
-    { "genre" : "Horror", "title": "In the Heights" },
-    { "genre" : "Romance", "title": "In the Heights" },
-    { "genre" : "Thriller", "title": "Peter Rabbit 2" },
-    { "genre" : "Comedy", "title": "Peter Rabbit 2" },
-    { "genre" : "Romance", "title": "A Quiet Place Part II" },
-    { "genre" : "Thriller", "title": "A Quiet Place Part II" },
-    { "genre" : "Horror", "title": "Cruella" },
-    { "genre" : "Drama", "title": "Cruella" }
-  ],
-
-  "allGenres" : [
-    { "name": "Action" },
-    { "name": "Horror" },
-    { "name": "Romance" },
-    { "name": "Drama" },
-    { "name": "Comedy" },
-    { "name": "Science fiction" },
-    { "name": "Thriller" },
-    { "name": "Musical" },
-    { "name": "Documentary" },
-    { "name": "Western" },
-    { "name": "Crime" },
-    { "name": "Mystery" },
-    { "name": "Fantasy" },
-    { "name": "Historical" }
+    { "genre" : "Action" },
+    { "genre" : "Horror" },
+    { "genre" : "Romance" },
+    { "genre" : "Drama" },
+    { "genre" : "Comedy" },
+    { "genre" : "Science fiction" },
+    { "genre" : "Thriller" },
+    { "genre" : "Musical" },
+    { "genre" : "Documentary" },
+    { "genre" : "Western" },
+    { "genre" : "Crime" },
+    { "genre" : "Mystery" },
+    { "genre" : "Fantasy" },
+    { "genre" : "Historical" }
   ],
 
   "defaultProfile": [
