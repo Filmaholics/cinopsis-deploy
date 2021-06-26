@@ -35,3 +35,6 @@ class UsersCollection {
  * @type {UsersCollection}
  */
 export const Users = new UsersCollection();
+
+export class User {
+}
