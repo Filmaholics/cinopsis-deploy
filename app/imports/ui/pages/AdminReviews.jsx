@@ -38,7 +38,7 @@ AdminReviews.propTypes = {
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Reviews.userPublicationName);
+  const subscription = Meteor.subscribe(Reviews.adminPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the Stuff documents
