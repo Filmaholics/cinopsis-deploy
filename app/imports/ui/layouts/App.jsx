@@ -16,6 +16,7 @@ import BrowseMovies from '../pages/BrowseMovies';
 import MovieReview from '../pages/MovieReview';
 import AddMovie from '../pages/AddMovie';
 import UserReview from '../pages/UserReview';
+import AdminReviews from '../pages/AdminReviews';
 import EditProfile from '../pages/EditProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -36,6 +37,8 @@ class App extends React.Component {
             <ProtectedRoute path="/movie/:_id" component={MovieReview}/>
             <ProtectedRoute path="/editprofile/:_id" component={EditProfile}/>
             <AdminProtectedRoute path="/addmovie" component={AddMovie}/>
+            <AdminProtectedRoute path="/adminreviews" component={AdminReviews}/>
+
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
