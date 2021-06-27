@@ -29,9 +29,10 @@ Meteor.publish(Reviews.userPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish(Reviews.adminPublicationName, function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Reviews.collection.find({ owner: username });
+Meteor.publish(Users.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Users.collection.find({ email: username });
   }
   return this.ready();
 });
@@ -45,10 +46,9 @@ Meteor.publish(Movies.adminPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish(Users.userPublicationName, function () {
+Meteor.publish(Reviews.adminPublicationName, function () {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Users.collection.find({ email: username });
+    return Reviews.collection.find();
   }
   return this.ready();
 });

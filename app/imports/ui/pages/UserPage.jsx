@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Header, Loader, Grid, Image, Container, Card, Button } from 'semantic-ui-react';
+import { Header, Loader, Grid, Image, Container, Card } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Users } from '../../api/user/User';
-import { Link, NavLink } from 'react-router-dom';
 
 class UserPage extends React.Component {
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
