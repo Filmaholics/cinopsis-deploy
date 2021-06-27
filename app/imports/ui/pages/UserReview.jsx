@@ -17,7 +17,7 @@ class UserReview extends React.Component {
 
     return (
       <Container id='userprofile-page'>
-        <Header as="h2" textAlign="center">Your Reviews</Header>
+        <Header as="h2" textAlign="center">My Reviews</Header>
         <Card>
           <CardContent id = "review-card">
             {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}

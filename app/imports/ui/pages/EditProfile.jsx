@@ -4,7 +4,6 @@ import swal from 'sweetalert';
 import {
   AutoForm,
   ErrorsField,
-  HiddenField,
   LongTextField,
   SubmitField,
   TextField,
