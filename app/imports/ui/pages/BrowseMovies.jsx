@@ -48,10 +48,7 @@ class BrowseMovies extends React.Component {
           <Button as={NavLink} activeClassName="active" exact to="/AddMovie" size='medium'>Add a Movie</Button>
         ) : ''}
         <Header as="h2" textAlign="center">Movies</Header>
-        <br/><br/>
-        <Input inverted type='text' size='large' placeholder='Search here...' icon='search' fluid
-          onChange={this.handleChange}/>
-        <br/><br/><br/><br/>
+        <br/>
         <Card.Group centered>
           {(_.size(searchMovies(this.props.movies, search.toLowerCase())) > 0) ?
             (alphabet(searchMovies(this.props.movies, search.toLowerCase())).map((movie, index) => <Movie
