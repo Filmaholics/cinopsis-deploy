@@ -30,8 +30,8 @@ Meteor.publish(Reviews.userPublicationName, function () {
 });
 
 Meteor.publish(Reviews.adminPublicationName, function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Reviews.collection.find({ owner: username });
+  if (this.userId) {
+    return Reviews.collection.find();
   }
   return this.ready();
 });

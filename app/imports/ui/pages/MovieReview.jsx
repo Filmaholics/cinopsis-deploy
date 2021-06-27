@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Loader, Card, Rating, Feed } from 'semantic-ui-react';
+import { Grid, Loader, Card, Feed } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -66,7 +66,7 @@ MovieReview.propTypes = {
 export default withTracker(({ match }) => {
   const documentId = match.params._id;
   const subscription = Meteor.subscribe(Movies.userPublicationName);
-  const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
+  const subscription2 = Meteor.subscribe(Reviews.adminPublicationName);
   const ready = subscription.ready() && subscription2.ready();
   const movie = Movies.collection.findOne(documentId);
   const reviews = Reviews.collection.find({}).fetch();
