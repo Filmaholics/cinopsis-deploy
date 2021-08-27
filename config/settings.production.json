@@ -48,7 +48,7 @@
 {
   "galaxy.meteor.com": {
     "env": {
-      "MONGO_URL": "mongodb+srv://admin:<password>@cluster0.0rknh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+      "MONGO_URL": "mongodb+srv://admin:cinopsis@cluster0.0rknh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     }
   },
 }
