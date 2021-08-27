@@ -1,1 +1,8 @@
-mongodb+srv://admin:<password>@cluster0.0rknh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb+srv://admin:<password>@cluster0.0rknh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    }
+  },
+}
