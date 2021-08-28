@@ -1,54 +1,101 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    {
+      "email": "admin@foo.com",
+      "password": "changeme",
+      "role": "admin"
+    },
+    {
+      "email": "john@foo.com",
+      "password": "changeme"
+    }
   ],
   "defaultMovies": [
-    { "title": "In the Heights",
+    {
+      "title": "In the Heights",
       "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/In_The_Heights_teaser_poster.jpg/220px-In_The_Heights_teaser_poster.jpg",
       "synopsis": "A musical love triangle"
     },
-    { "title": "Peter Rabbit 2",
+    {
+      "title": "Peter Rabbit 2",
       "image": "https://m.media-amazon.com/images/M/MV5BNTQwOThjZTEtNDNhZS00YmYzLWFkNWMtNWRjN2RmOWI5ZmU1XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg",
       "synopsis": "A rabbit finds life outside of his garden isn't everything he thought it would be"
     },
-    { "title": "A Quiet Place Part II",
+    {
+      "title": "A Quiet Place Part II",
       "image": "https://m.media-amazon.com/images/M/MV5BMTE2ODU4NDEtNmRjNS00OTk1LTg4NmMtNTAzYzVlNzJmYjgzXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg",
       "synopsis": "Forced off their farm, the Abbott family tries to survive"
     },
-    { "title": "Cruella",
+    {
+      "title": "Cruella",
       "image": "http://udreview.com/wp-content/uploads/2021/03/cruella_digital_teaser2_1-sht_v2_lg-2.jpg",
       "synopsis": "Cruella's origin story"
     }
   ],
-
-  "defaultMovieGenres" : [
-    { "genre" : "Action" },
-    { "genre" : "Horror" },
-    { "genre" : "Romance" },
-    { "genre" : "Drama" },
-    { "genre" : "Comedy" },
-    { "genre" : "Science fiction" },
-    { "genre" : "Thriller" },
-    { "genre" : "Musical" },
-    { "genre" : "Documentary" },
-    { "genre" : "Western" },
-    { "genre" : "Crime" },
-    { "genre" : "Mystery" },
-    { "genre" : "Fantasy" },
-    { "genre" : "Historical" }
+  "defaultMovieGenres": [
+    {
+      "genre": "Action"
+    },
+    {
+      "genre": "Horror"
+    },
+    {
+      "genre": "Romance"
+    },
+    {
+      "genre": "Drama"
+    },
+    {
+      "genre": "Comedy"
+    },
+    {
+      "genre": "Science fiction"
+    },
+    {
+      "genre": "Thriller"
+    },
+    {
+      "genre": "Musical"
+    },
+    {
+      "genre": "Documentary"
+    },
+    {
+      "genre": "Western"
+    },
+    {
+      "genre": "Crime"
+    },
+    {
+      "genre": "Mystery"
+    },
+    {
+      "genre": "Fantasy"
+    },
+    {
+      "genre": "Historical"
+    }
+  ],
+  "defaultProfile": [
+    {
+      "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg",
+      "firstName": "Admin",
+      "lastName": "Boss",
+      "email": "admin@foo.com",
+      "bio": "I love movies!"
+    },
+    {
+      "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg",
+      "firstName": "Movie",
+      "lastName": "Lover",
+      "email": "john@foo.com",
+      "bio": "I love movies!"
+    }
   ],
 
-  "defaultProfile": [
-    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "Admin", "lastName": "Boss", "email": "admin@foo.com",  "bio": "I love movies!" },
-    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "Movie", "lastName": "Lover", "email": "john@foo.com",  "bio": "I love movies!" }
-  ]
-}
-
-{
   "galaxy.meteor.com": {
     "env": {
       "MONGO_URL": "mongodb+srv://admin:cinopsis@cluster0.0rknh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     }
-  },
+  }
 }
